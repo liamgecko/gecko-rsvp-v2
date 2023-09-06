@@ -1,0 +1,164 @@
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    .avatar-body {
+        background-color: $avatar-bg;
+        border-radius: $avatar-border-radius;
+        border: $avatar-border;
+        width: $avatar-size-x;
+        height: $avatar-size-y;
+        font-size: $avatar-font-size;
+        font-weight: $avatar-font-weight;
+        vertical-align: middle;
+        line-height: 1;
+        box-sizing: content-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &.avatar-online,
+        &.avatar-unavailable,
+        &.avatar-offline,
+        &.avatar-notification {
+            &:before,
+            &:after {
+                content: "";
+                width: $avatar-status-size-x;
+                height: $avatar-status-size-y;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+            }
+            &:before {
+                left: 0;
+                top: 0;
+            }
+            &:after {
+                right: 0;
+                bottom: 0;
+            }
+        }
+        &.avatar-online {
+            &:after {
+                background-color: $avatar-online-bg;
+                border: 1px solid #FFFFFF;
+            }
+        }
+        &.avatar-unavailable {
+            &:after {
+                background-color: $avatar-unavailable-bg;
+                border: 1px solid #FFFFFF;
+            }
+        }
+        &.avatar-offline {
+            &:after {
+                background-color: $avatar-offline-bg;
+                border: 1px solid #FFFFFF;
+            }
+        }
+        &.avatar-notification {
+            &:before {
+                background-color: $avatar-notification-bg;
+                border: 1px solid #FFFFFF;
+            }
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+    &.avatar-xs {
+        .avatar-body {
+            width: $avatar-xs-size-x;
+            height: $avatar-xs-size-y;
+            font-size: $avatar-font-size-xs;
+            &.avatar-online,
+            &.avatar-unavailable,
+            &.avatar-offline,
+            &.avatar-notification {
+                &:before,
+                &:after {
+                    width: $avatar-status-xs-size-x;
+                    height: $avatar-status-xs-size-y;
+                }
+            }
+        }
+    }
+    &.avatar-sm {
+        .avatar-body {
+            width: $avatar-sm-size-x;
+            height: $avatar-sm-size-y;
+            font-size: $avatar-font-size-sm;
+            &.avatar-online,
+            &.avatar-unavailable,
+            &.avatar-offline,
+            &.avatar-notification {
+                &:before,
+                &:after {
+                    width: $avatar-status-sm-size-x;
+                    height: $avatar-status-sm-size-y;
+                }
+            }
+        }  
+    }
+    &.avatar-lg {
+        .avatar-body {
+            width: $avatar-lg-size-x;
+            height: $avatar-lg-size-y;
+            font-size: $avatar-font-size-lg;
+            &.avatar-online,
+            &.avatar-unavailable,
+            &.avatar-offline,
+            &.avatar-notification {
+                &:before,
+                &:after {
+                    width: $avatar-status-lg-size-x;
+                    height: $avatar-status-lg-size-y;
+                }
+            }
+        }
+    }
+    &.avatar-xl {
+        .avatar-body {
+            width: $avatar-xl-size-x;
+            height: $avatar-xl-size-y;
+            font-size: $avatar-font-size-xl;
+            &.avatar-online,
+            &.avatar-unavailable,
+            &.avatar-offline,
+            &.avatar-notification {
+                &:before,
+                &:after {
+                    width: $avatar-status-xl-size-x;
+                    height: $avatar-status-xl-size-y;
+                }
+            }
+        }
+    }
+    .avatar-name {
+        font-size: $avatar-name-font-size-base;
+        font-weight: $avatar-name-font-weight;
+        margin-left: $avatar-name-margin;
+    }
+    &.avatar-xs {
+        .avatar-name {
+            font-size: $avatar-name-font-size-xs;
+        }
+    }
+    &.avatar-sm {
+        .avatar-name {
+            font-size: $avatar-name-font-size-sm;
+        } 
+    }
+    &.avatar-lg {
+        .avatar-name {
+            font-size: $avatar-name-font-size-lg;
+        }
+    }
+    &.avatar-xl {
+        .avatar-name {
+            font-size: $avatar-name-font-size-xl;
+        }
+    }
+}

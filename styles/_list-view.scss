@@ -1,0 +1,136 @@
+.listview-header-content {   
+    display: flex;
+
+    .listview-search {   
+        position: relative;
+        margin-left: 8px;
+        width: 220px;
+
+        input {
+            padding-right: 30px;
+        }
+
+        button {
+            position: absolute;
+            top:0;
+            right: 0;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 100%;
+        }
+    }
+}
+            
+.listview-content-wrapper {
+    position: relative;
+
+    .listview-content {
+
+        .listview-row {
+
+            td {
+                vertical-align: middle;
+            }
+
+            &:last-child {
+                td {
+                    border: none;
+                }
+            }
+        }
+
+        .listview-column-dropdown {
+            width: 44px;
+            padding: 0 16px;
+        }
+
+        .listview-column-checkbox {
+            width: 14px;
+            padding: 0 16px;
+        }
+
+        .listview-header-column {
+    
+            .listview-header-column-sort {
+                margin-left: 6px;
+                width: 24px;
+                height: 24px;
+                border-radius: 4px;
+                text-align: center;
+                @include transition();
+                opacity: 0;
+                background-color: transparent;
+                border: none;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: $primary;
+            }
+
+            &:hover {
+                .listview-header-column-sort {
+                    background-color: $grey-200;
+                    opacity: 1;
+                }
+            }
+
+            &.active-col {
+                .listview-header-column-sort {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .listview-column {
+            padding: 0;
+
+            .listview-column-inner {
+                color: $primary;
+                text-decoration: none;
+                display: block;
+                padding: 16px;
+            }
+
+            a.listview-column-wrapper-link {
+                &:focus-visible {
+                    outline: 2px solid $blue-500;
+                    outline-offset: -2px;
+                }
+            }
+        }
+
+        .listview-check-input {
+            display: flex;
+
+            .form-check-input {
+                margin: 0;
+            }
+        }
+
+        .listview-filter {
+            width: 44px;
+            transition: width .15s;
+
+            &.is-open {
+                width: 280px;
+            }
+        }
+    }
+
+    &.listview-with-filter {
+        .listview-content {
+            padding-left: 45px;
+        }
+        .listview-filter {
+            &.is-open + .listview-content {
+                padding-left: 280px
+            }
+        }
+    }
+}
+
+// .listview-filter {
+//     border-right: 1px solid hsl(210deg, 17%, 90%);
+//     background-color: hsl(210deg, 25%, 98%);
+// }

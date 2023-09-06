@@ -1,0 +1,263 @@
+// Make the div behave like a button
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+
+  > .btn {
+    &.btn-primary {
+      background-color: $btn-group-bg;
+      border: $btn-group-border;
+      color: $btn-group-color;
+      &:hover,
+      &.active {
+        background-color: $btn-group-active-bg;
+        color: $btn-group-active-color;
+        border-color: $btn-group-active-border-color;
+      }
+    }
+    position: relative;
+    flex: 1 1 auto;
+  }
+
+  .btn-check:checked + .btn, 
+  :not(.btn-check) + .btn:active, 
+  .btn:first-child:active, 
+  .btn.active, .btn.show {
+    background-color: $btn-group-checked-bg;
+    color: $btn-group-checked-color;
+    border-color: $btn-group-checked-border-color;
+  }
+
+  // Bring the hover, focused, and "active" buttons to the front to overlay
+  // the borders properly
+  > .btn-check:checked + .btn,
+  > .btn-check:focus + .btn,
+  > .btn:hover,
+  > .btn:focus,
+  > .btn:active,
+  > .btn.active {
+    z-index: 1;
+  }
+
+  &.dropdown {
+    background-color: $btn-split-bg;
+    .btn {
+      &-primary {
+        background-color: $btn-split-primary-bg;
+        color: $btn-split-primary-color;
+        border: $btn-split-primary-border;
+        &:hover {
+          background-color: $btn-split-primary-hover-bg;
+          border-color: $btn-split-primary-hover-border-color;
+          color: $btn-split-primary-hover-color;
+        }
+        &:active,
+        &.active {
+          background-color: $btn-split-primary-active-bg;
+          color: $btn-split-primary-active-color;
+          border-color: $btn-split-primary-active-border-color;
+        }
+        &:disabled,
+        &.disabled {
+          background-color: $btn-split-primary-disabled-bg;
+          border-color: $btn-split-primary-disabled-border-color;
+        }
+      }
+      &-secondary {
+        &:active,
+        &.active {
+          background-color: $btn-split-secondary-active-bg;
+          color: $btn-split-secondary-active-color;
+          border-color: $btn-split-secondary-active-border;
+        }
+        &:disabled,
+        &.disabled {
+          background-color: $btn-split-secondary-disabled-bg;
+          color: $btn-split-secondary-disabled-color;
+        }
+      }
+      &-danger {
+        &:active,
+        &.active {
+          background-color: $btn-split-danger-active-bg;
+          color: $btn-split-danger-active-color;
+          border-color: $btn-split-danger-active-border;
+        }
+        &:disabled,
+        &.disabled {
+          background-color: $btn-split-danger-disabled-bg;
+        }
+      }
+      &-outline-primary {
+        &:active,
+        &.active {
+          background-color: $btn-split-naked-active-bg;
+          color: $btn-split-naked-active-color;
+          border-color: $btn-split-naked-active-border;
+        }
+        &:disabled,
+        &.disabled {
+          background-color: $btn-split-naked-disabled-bg;
+          color: $btn-split-naked-disabled-color;
+        }
+      }
+    }
+    > :not(.btn-check:first-child) + .btn, 
+    > .btn-group:not(:first-child) {
+      margin-left: 1px;
+    }
+  }
+  &.show {
+    .btn {
+      &-primary {
+        &.dropdown-toggle-split {
+          background-color: $blue-600;
+          color: $white;
+          border-color: transparent;
+        }
+      }
+      &-secondary {
+        &.dropdown-toggle-split {
+          background-color: $blue-200;
+          color: $blue-600;
+          border-color: transparent;
+        }
+      }
+      &-danger {
+        &.dropdown-toggle-split {
+          background-color: $red-600;
+          color: $white;
+          border-color: transparent;
+        }
+      }
+      &-outline-primary {
+        &.dropdown-toggle-split {
+          background-color: $blue-200;
+          color: $blue-800;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.btn-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .input-group {
+    width: auto;
+  }
+}
+
+.btn-group {
+  @include border-radius($btn-border-radius);
+
+  // Prevent double borders when buttons are next to each other
+  > :not(.btn-check:first-child) + .btn,
+  > .btn-group:not(:first-child) {
+    margin-left: -$btn-border-width;
+  }
+
+  // Reset rounded corners
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn.dropdown-toggle-split:first-child,
+  > .btn-group:not(:last-child) > .btn {
+    @include border-end-radius(0);
+  }
+
+  // The left radius should be 0 if the button is:
+  // - the "third or more" child
+  // - the second child and the previous element isn't `.btn-check` (making it the first child visually)
+  // - part of a btn-group which isn't the first child
+  > .btn:nth-child(n + 3),
+  > :not(.btn-check) + .btn,
+  > .btn-group:not(:first-child) > .btn {
+    @include border-start-radius(0);
+  }
+}
+
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
+
+.btn-group-sm > .btn { @extend .btn-sm; }
+.btn-group-lg > .btn { @extend .btn-lg; }
+
+
+//
+// Split button dropdowns
+//
+
+.dropdown-toggle-split {
+  padding-right: $btn-padding-x * .75;
+  padding-left: $btn-padding-x * .75;
+
+  &::after,
+  .dropup &::after,
+  .dropend &::after {
+    margin-left: 0;
+  }
+
+  .dropstart &::before {
+    margin-right: 0;
+  }
+}
+
+.btn-sm + .dropdown-toggle-split {
+  padding-right: $btn-padding-x-sm * .75;
+  padding-left: $btn-padding-x-sm * .75;
+}
+
+.btn-lg + .dropdown-toggle-split {
+  padding-right: $btn-padding-x-lg * .75;
+  padding-left: $btn-padding-x-lg * .75;
+}
+
+
+// The clickable button for toggling the menu
+// Set the same inset shadow as the :active state
+.btn-group.show .dropdown-toggle {
+  @include box-shadow($btn-active-box-shadow);
+
+  // Show no shadow for `.btn-link` since it has no other button styles.
+  &.btn-link {
+    @include box-shadow(none);
+  }
+}
+
+
+//
+// Vertical button groups
+//
+
+.btn-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  > .btn,
+  > .btn-group {
+    width: 100%;
+  }
+
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) {
+    margin-top: -$btn-border-width;
+  }
+
+  // Reset rounded corners
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > .btn {
+    @include border-bottom-radius(0);
+  }
+
+  > .btn ~ .btn,
+  > .btn-group:not(:first-child) > .btn {
+    @include border-top-radius(0);
+  }
+}

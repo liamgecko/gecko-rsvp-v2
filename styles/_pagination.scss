@@ -1,0 +1,166 @@
+.pagination {
+  // scss-docs-start pagination-css-vars
+  --#{$prefix}pagination-padding-x: #{$pagination-padding-x};
+  --#{$prefix}pagination-padding-y: #{$pagination-padding-y};
+  @include rfs($pagination-font-size, --#{$prefix}pagination-font-size);
+  --#{$prefix}pagination-color: #{$pagination-color};
+  --#{$prefix}pagination-size: #{$pagination-font-size};
+  --#{$prefix}pagination-bg: #{$pagination-bg};
+  --#{$prefix}pagination-border-radius: #{$pagination-border-radius};
+  --#{$prefix}pagination-hover-color: #{$pagination-hover-color};
+  --#{$prefix}pagination-hover-bg: #{$pagination-hover-bg};
+  --#{$prefix}pagination-focus-color: #{$pagination-focus-color};
+  --#{$prefix}pagination-focus-bg: #{$pagination-focus-bg};
+  --#{$prefix}pagination-focus-box-shadow: #{$pagination-focus-box-shadow};
+  --#{$prefix}pagination-active-color: #{$pagination-active-color};
+  --#{$prefix}pagination-active-bg: #{$pagination-active-bg};
+  --#{$prefix}pagination-active-font-weight: #{$pagination-active-font-weight};
+  --#{$prefix}pagination-disabled-color: #{$pagination-disabled-color};
+  --#{$prefix}pagination-disabled-bg: #{$pagination-disabled-bg};
+  // scss-docs-end pagination-css-vars
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  @include list-unstyled();
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  @include font-size(var(--#{$prefix}pagination-font-size));
+  color: var(--#{$prefix}pagination-color);
+  text-decoration: if($link-decoration == none, null, none);
+  font-size: var(--#{$prefix}pagination-font-size);
+  background-color: var(--#{$prefix}pagination-bg);
+  border-radius: var(--#{$prefix}pagination-border-radius);
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  margin: 0 1px;
+  @include transition($pagination-transition);
+
+  &:hover {
+    z-index: 2;
+    color: var(--#{$prefix}pagination-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+    background-color: var(--#{$prefix}pagination-hover-bg);
+  }
+
+  &:focus {
+    z-index: 3;
+    color: var(--#{$prefix}pagination-focus-color);
+    background-color: var(--#{$prefix}pagination-focus-bg);
+    outline: $pagination-focus-outline;
+    box-shadow: var(--#{$prefix}pagination-focus-box-shadow);
+  }
+
+  &.active,
+  .active > & {
+    z-index: 3;
+    color: var(--#{$prefix}pagination-active-color);
+    font-weight: var(--#{$prefix}pagination-active-font-weight);
+    @include gradient-bg(var(--#{$prefix}pagination-active-bg));
+  }
+
+  &.disabled,
+  .disabled > & {
+    color: var(--#{$prefix}pagination-disabled-color);
+    pointer-events: none;
+    background-color: var(--#{$prefix}pagination-disabled-bg);
+  }
+}
+
+//
+// Sizing
+//
+
+.pagination-lg {
+  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $pagination-border-radius-lg);
+}
+
+.pagination-sm {
+  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $pagination-border-radius-sm);
+}
+
+//
+// List View
+//
+
+.listview-pagination 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .split-left,
+  .split-right 
+  {
+    display: flex;
+    align-items: center;
+  }
+
+  .pagination-rows 
+  {
+    font-size: .85714rem;
+    ul {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .pagination-results 
+  {
+    margin-right: $pagination-results-spacing;
+    font-size: .85714rem;
+
+    .btn.btn-secondary 
+    {
+      font-weight: $pagination-results-font-weight;
+      padding: $pagination-results-padding;
+      &:hover 
+      {
+        background-color: $pagination-results-hover-bg;
+        color: $pagination-results-hover-color;
+      }
+    }
+  }
+
+  .pagination-pages {
+    margin-right: 8px;
+  }
+
+  .pagination-controls 
+  {
+    margin-bottom: 0;
+
+    button > i,
+    button > svg {
+      margin: 0 2px;
+    }
+
+    .page-link 
+    {
+      background-color: $pagination-controls-bg;
+      border-radius: $pagination-controls-border-radius;
+      &:hover 
+      {
+        background-color: $pagination-results-hover-bg;
+        color: $pagination-results-hover-color;
+      }
+    }
+
+    li 
+    {
+      margin: 0 2px;
+      &:first-child {
+        .page-link {
+          opacity: 0.5;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,11 @@
+// scss-docs-start badge-variant-mixin
+@mixin badge-variant($background, $color) {
+    --#{$prefix}badge-color: #{$color};
+    --#{$prefix}badge-bg: #{$background};
+  
+    @if $enable-gradients {
+      background-image: var(--#{$prefix}gradient);
+    }
+  }
+// scss-docs-end badge-variant-mixin
+  

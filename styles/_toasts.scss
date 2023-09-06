@@ -1,0 +1,120 @@
+.toast {
+  // scss-docs-start toast-css-vars
+  --#{$prefix}toast-zindex: #{$zindex-toast};
+  --#{$prefix}toast-padding-x: #{$toast-padding-x};
+  --#{$prefix}toast-padding-y: #{$toast-padding-y};
+  --#{$prefix}toast-spacing: #{$toast-spacing};
+  --#{$prefix}toast-font-weight: #{$toast-font-weight};
+  --#{$prefix}toast-max-width: #{$toast-max-width};
+  @include rfs($toast-font-size, --#{$prefix}toast-font-size);
+  --#{$prefix}toast-color: #{$toast-color};
+  --#{$prefix}toast-bg: #{$toast-background-color};
+  --#{$prefix}toast-border-width: #{$toast-border-width};
+  --#{$prefix}toast-border-color: #{$toast-border-color};
+  --#{$prefix}toast-border-radius: #{$toast-border-radius};
+  --#{$prefix}toast-box-shadow: #{$toast-box-shadow};
+  // scss-docs-end toast-css-vars
+
+  width: var(--#{$prefix}toast-max-width);
+  max-width: 100%;
+  @include font-size(var(--#{$prefix}toast-font-size));
+  color: var(--#{$prefix}toast-color);
+  pointer-events: auto;
+  background-color: var(--#{$prefix}toast-bg);
+  background-clip: padding-box;
+  border: var(--#{$prefix}toast-border-width) solid var(--#{$prefix}toast-border-color);
+  box-shadow: var(--#{$prefix}toast-box-shadow);
+  @include border-radius(var(--#{$prefix}toast-border-radius));
+
+  &.showing {
+    opacity: 0;
+  }
+
+  &:not(.show) {
+    display: none;
+  }
+
+  .toast-container {
+    --#{$prefix}toast-zindex: #{$zindex-toast};
+  
+    position: absolute;
+    z-index: var(--#{$prefix}toast-zindex);
+    width: max-content;
+    max-width: 100%;
+    pointer-events: none;
+  
+    > :not(:last-child) {
+      margin-bottom: var(--#{$prefix}toast-spacing);
+    }
+  }
+  
+  .toast-body {
+    padding: var(--#{$prefix}toast-padding-x);
+    word-wrap: break-word;
+    @include flex-vertical();
+    justify-content: space-between;
+    .toast-main-body {
+      @include flex-vertical();
+      padding-right: $toast-body-padding;
+      font-weight: var(--#{$prefix}toast-font-weight);
+      svg,
+      i {
+        font-size: $toast-icon-size;
+        margin-right: $spacer;
+      }
+    }
+    .toast-dismiss {
+      button {
+        display: flex;
+      }
+    }
+  }
+
+  &.toast-info {
+    background-color: $toast-info-bg;
+    color: $toast-info-color;
+    border-color: $toast-info-border-color;
+    .btn-close {
+      background: transparent escape-svg($toast-info-btn) center / 12px auto no-repeat;
+      &:hover {
+        background-color: $toast-info-dismiss-bg;
+      }
+    }
+  }
+
+  &.toast-success {
+    background-color: $toast-success-bg;
+    color: $toast-success-color;
+    border-color: $toast-success-border-color;
+    .btn-close {
+      background: transparent escape-svg($toast-success-btn) center / 12px auto no-repeat;
+      &:hover {
+        background-color: $toast-success-dismiss-bg;
+      }
+    }
+  }
+
+  &.toast-warning {
+    background-color: $toast-warning-bg;
+    color: $toast-warning-color;
+    border-color: $toast-warning-border-color;
+    .btn-close {
+      background: transparent escape-svg($toast-warning-btn) center / 12px auto no-repeat;
+      &:hover {
+        background-color: $toast-warning-dismiss-bg;
+      }
+    }
+  }
+
+  &.toast-danger {
+    background-color: $toast-danger-bg;
+    color: $toast-danger-color;
+    border-color: $toast-danger-border-color;
+    .btn-close {
+      background: transparent escape-svg($toast-danger-btn) center / 12px auto no-repeat;
+      &:hover {
+        background-color: $toast-danger-dismiss-bg;
+      }
+    }
+  }
+}

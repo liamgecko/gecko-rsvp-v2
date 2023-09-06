@@ -1,0 +1,265 @@
+.tox {
+    // Text Editor
+    &.tox-tinymce {
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+        font-family: $font-family-base;
+        color: $body-color;
+        font-size: $font-size-base;
+    }
+    &:not(.tox-tinymce-inline) {
+        .tox-editor-header {
+            box-shadow: none !important;
+            padding: $spacer !important;
+        }
+    }
+    .tox-toolbar-overlord {
+        .tox-toolbar__primary {
+            background-color: $grey-200;
+            border-radius: $border-radius;
+        }
+    }
+    .tox-statusbar__branding {
+        display: none;
+    }
+    .tox-tbtn {
+        color: $body-color !important;
+        svg,
+        :not(svg):not(rect) {
+            fill: $body-color !important;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            background: $white !important;
+            color: $body-color !important;
+        }
+    }
+    .tox-tbtn--disabled, 
+    .tox-tbtn--disabled:hover, 
+    .tox-tbtn:disabled, 
+    .tox-tbtn:disabled:hover {
+        opacity: 0.5;
+    }
+    .tox-tbtn--bespoke {
+        background-color: $body-bg !important;
+        cursor: pointer;
+        @include transition();
+        &:hover,
+        &:active,
+        &:focus {
+            background: $white !important;
+            color: $body-color !important;
+        }
+        .tox-tbtn__select-label {
+            font-weight: $font-weight-semibold;
+        }
+    }
+    .tox-split-button {
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: none !important;
+            background: $white !important;
+            color: $body-color !important;
+        }
+    }
+    .tox-tbtn--enabled,
+    .tox-tbtn--enabled:hover {
+        background: $white !important;
+        color: $body-color !important;
+    }
+    &.tox-tinymce-aux {
+        .tox-toolbar__overflow {
+            box-shadow: $box-shadow !important;
+            border-radius: $border-radius !important;
+            .tox-tbtn {
+                &:hover,
+                &:active,
+                &:focus {
+                    background: $grey-200 !important;
+                }
+            }
+        }
+    }
+    .tox-menu {
+        box-shadow: $box-shadow !important;
+        border-radius: $border-radius !important;
+        border: none !important;
+        &.tox-collection {
+            &.tox-collection--list {
+                padding: 0 !important;
+                .tox-collection__item {
+                    padding: 12px 16px;
+                    color: $secondary;
+                    border-radius: 0;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: $grey-200 !important;
+                        color: $body-color !important;
+                    }
+                    .tox-collection__item-label {
+                        margin: 0 !important;
+                    }
+                }
+                .tox-collection__item--active {
+                    background-color: $grey-200 !important;
+                    color: $body-color !important;
+                }
+            }
+        }
+    }
+    .tox-insert-table-picker .tox-insert-table-picker__selected {
+        background-color: $blue-200 !important;
+        border-color: $blue-600 !important;
+    }
+    .tox-statusbar a, 
+    .tox-statusbar__path-item, 
+    .tox-statusbar__wordcount {
+        color: $secondary !important;
+        font-size: $font-size-sm;
+    }
+    // Buttons
+    .tox-button {
+        &::before {
+            display: none !important;
+        }
+        &:focus-visible {
+            background-color: $btn-secondary-bg;
+            color: $btn-secondary-active-color;
+            outline: 1px solid $white;
+            outline-offset: -2px;
+            border-color: $grey-600; 
+        }
+    }
+    // Forms
+    .tox-form {
+        > .tox-form__group {
+            margin-bottom: $form-group-margin; 
+            &:last-of-type {
+              margin: 0;
+            }
+        }
+        .tox-label, 
+        .tox-toolbar-label {
+            margin-bottom: $form-label-margin-bottom;
+            font-size: $form-label-font-size;
+            font-family: $font-family-base;
+            font-weight: $form-label-font-weight;
+            color: $form-label-color;
+        }
+
+        .tox-listboxfield .tox-listbox--select, 
+        .tox-textarea, 
+        .tox-textarea-wrap .tox-textarea:focus, 
+        .tox-textfield, 
+        .tox-toolbar-textfield {
+            display: block;
+            padding: $input-padding-y $input-padding-x;
+            font-family: $input-font-family !important;
+            font-size: $input-font-size;
+            font-weight: $input-font-weight;
+            line-height: $input-line-height;
+            color: $input-color;
+            background-color: $input-bg;
+            background-clip: padding-box;
+            border-color: $input-border-color;
+            border-radius: $input-border-radius;
+            transition: $input-transition;
+            &:hover {
+                border-color: $input-hover-border-color; 
+            }
+        
+            &:focus {
+                color: $input-focus-color;
+                background-color: $input-focus-bg;
+                border-color: $input-focus-border-color;
+                outline: 0;
+                box-shadow: 0 0 0 0.025rem rgba($blue-500, 100%);
+            }
+        }
+        .tox-listboxfield .tox-listbox--select {
+            display: inline-flex;
+        }
+    }
+    // Modal
+    .tox-dialog-wrap__backdrop {
+        background-color: $modal-backdrop-bg !important;
+    }
+
+    .tox-dialog {
+        border-radius: $border-radius !important;
+        .tox-dialog__header {
+            flex-shrink: 0 !important;
+            padding: $modal-header-padding !important;
+            border-bottom: 1px solid $border-color !important;
+            color: $body-color !important;
+            .tox-dialog__title {
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                font-family: $font-family-base !important;
+            }
+            .tox-button {
+                color: $body-color;
+                padding: 0;
+                &:hover {
+                    background-color: $grey-200;
+                    border-radius: $border-radius;
+                }
+            }
+        }
+        .tox-dialog__footer {
+            padding: $modal-header-padding !important;
+            border-top: 1px solid $border-color !important;
+            .tox-button {
+                background-color: $btn-primary-bg;
+                font-family: $font-family-base;
+                border: $btn-primary-border;
+                border-radius: $btn-border-radius;
+                font-weight: $btn-font-weight;
+                font-size: $btn-font-size;
+                @include transition();
+                &:hover {
+                    background-color: $btn-primary-hover-bg;
+                    border-color: $btn-primary-hover-bg;
+                    color: $btn-primary-hover-color
+                }
+                &:active,
+                &.active {
+                    background-color: $btn-primary-active-bg;
+                    color: $btn-primary-active-color;
+                }
+                &:focus-visible {
+                    background-color: $btn-primary-active-bg;
+                    color: $btn-primary-active-color;
+                    outline: 1px solid $white;
+                    outline-offset: -2px;
+                    box-shadow: none;
+                }
+                &.tox-button--secondary {
+                    background-color: $btn-secondary-bg;
+                    border: $btn-secondary-border;
+                    &:hover {
+                        background-color: $btn-secondary-hover-bg;
+                        border-color: $btn-secondary-hover-bg;
+                        color: $btn-secondary-hover-color
+                    }
+                    &:active,
+                    &.active {
+                        background-color: $btn-secondary-active-bg;
+                        color: $btn-secondary-active-color;
+                    }
+                    &:focus-visible {
+                        background-color: $btn-secondary-active-bg;
+                        color: $btn-secondary-active-color;
+                        outline: 1px solid $white;
+                        outline-offset: -2px;
+                        border-color: $btn-secondary-active-border; 
+                    }
+                }
+                
+            }
+        }
+    }
+}

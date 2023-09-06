@@ -1,0 +1,237 @@
+// Select
+//
+// Replaces the browser default select with a custom one, mostly pulled from
+// https://primer.github.io/.
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: $form-select-padding-y $form-select-indicator-padding $form-select-padding-y $form-select-padding-x;
+  -moz-padding-start: subtract($form-select-padding-x, 3px); // See https://github.com/twbs/bootstrap/issues/32636
+  font-family: $form-select-font-family;
+  @include font-size($form-select-font-size);
+  font-weight: $form-select-font-weight;
+  line-height: $form-select-line-height;
+  color: $form-select-color;
+  background-color: $form-select-bg;
+  background-image: escape-svg($form-select-indicator);
+  background-repeat: no-repeat;
+  background-position: $form-select-bg-position;
+  background-size: $form-select-bg-size;
+  border: $form-select-border-width solid $form-select-border-color;
+  @include border-radius($form-select-border-radius, 0);
+  @include box-shadow($form-select-box-shadow);
+  @include transition($form-select-transition);
+  appearance: none;
+
+  &:focus {
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.025rem rgba($blue-500, 100%);
+  }
+
+  &:hover {
+    border-color: $form-select-hover-border-color; 
+    cursor: pointer;
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    padding-right: $form-select-padding-x;
+    background-image: none;
+  }
+
+  &[multiple] {
+    option {
+      padding: 4px 8px;
+      margin-bottom: 2px;
+      margin-left: -8px;
+      margin-right: -8px;
+      border-radius: 4px;
+      &:hover {
+        background-color: $grey-200;
+      }
+      &:checked {
+        background-color: $blue-200;
+      }
+    }
+    &:focus {
+      option {
+        &:checked {
+          background-image: linear-gradient(0deg, $blue-200 0%, $blue-200 100%);
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    color: $form-select-disabled-color;
+    background-color: $form-select-disabled-bg;
+    border-color: $form-select-disabled-border-color;
+  }
+
+  // Remove outline from select box in FF
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $form-select-color;
+  }
+}
+
+.form-select-sm {
+  padding-top: $form-select-padding-y-sm;
+  padding-bottom: $form-select-padding-y-sm;
+  padding-left: $form-select-padding-x-sm;
+  @include font-size($form-select-font-size-sm);
+  @include border-radius($form-select-border-radius-sm);
+}
+
+.form-select-lg {
+  padding-top: $form-select-padding-y-lg;
+  padding-bottom: $form-select-padding-y-lg;
+  padding-left: $form-select-padding-x-lg;
+  @include font-size($form-select-font-size-lg);
+  @include border-radius($form-select-border-radius-lg);
+}
+
+//
+// React Select
+//
+
+.gecko-react-select {
+  .gecko-react-select__control {
+    border: $react-select-input-border;
+    @include transition();
+    &:hover {
+      border-color: $react-select-input-hover-border; 
+      cursor: pointer;
+    }
+    &.gecko-react-select__control--is-focused,
+    &.gecko-react-select__control--menu-is-open {
+      color: $react-select-input-focus-color;
+      background-color: $react-select-input-focus-bg;
+      border-color: $react-select-input-focus-border;
+      outline: 0 !important;
+      box-shadow: $react-select-input-focus-box-shadow;
+    }
+    .gecko-react-select__value-container {
+      padding: $react-select-input-padding;
+      .gecko-react-select__input-container {
+        padding: 0;
+        margin: 0;
+        color: $react-select-color;
+      }
+      .gecko-react-select__single-value {
+        margin-left: 0;
+        color: $react-select-color;
+      }
+      .gecko-react-select__placeholder {
+        @include form-placeholder();
+        margin: 0;
+      }
+      .gecko-react-select__multi-value {
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: $react-select-badge-border-radius;
+        background-color: $react-select-badge-bg;
+        &:first-child {
+          margin-left: 0;
+        }
+        .gecko-react-select__multi-value__label {
+          color: $react-select-badge-color;
+          padding: $react-select-badge-padding;
+          font-size: $react-select-badge-font-size;
+          font-weight: $react-select-badge-font-weight;
+        }
+        .gecko-react-select__multi-value__remove {
+          &:hover {
+            background-color: $react-select-badge-remove-bg;
+            color: $react-select-badge-remove-color;
+          }
+        }
+      }
+    }
+    .gecko-react-select__indicators {
+      .gecko-react-select__indicator-separator {
+        background-color: $react-select-indicator-bg;
+      }
+      .gecko-react-select__indicator {
+        color: $react-select-indicator-color;
+      }
+      .gecko-react-select__dropdown-indicator {
+        padding-right: $react-select-indicator-padding-right;
+        padding-left: $react-select-indicator-padding-left;
+        svg,
+        i {
+          height: $react-select-indicator-height;
+          width: $react-select-indicator-width;
+          font-size: $react-select-indicator-size;
+        }
+      }
+      .gecko-react-select__clear-indicator {
+        padding-right: $react-select-indicator-padding-right;
+      }
+    }
+  }
+  .gecko-react-select__menu {
+    box-shadow: $react-select-menu-box-shadow;
+    .gecko-react-select__menu-list {
+      margin: $react-select-menu-margin;
+      padding: 0;
+      .gecko-react-select__option {
+        padding: $react-select-menu-padding;
+        font-weight: $react-select-menu-font-weight;
+        color: $react-select-menu-color;
+        @include transition();
+        &--is-focused {
+          background-color: $react-select-menu-focus-bg;
+          color: $react-select-menu-focus-color;
+          cursor: pointer;
+        }
+        &--is-selected {
+          background-color: $react-select-menu-selected-bg;
+          color: $react-select-menu-selected-color;
+          cursor: default;
+        }
+      }
+      .gecko-react-select__group {
+        padding: 0;
+        .gecko-react-select__group-heading {
+          font-size: $react-select-divider-font-size;
+          font-weight: $react-select-divider-font-weight;
+          color: $react-select-divider-color;
+          text-transform: none;
+          padding: $react-select-divider-padding;
+          margin: 0;
+        }
+      }
+      .gecko-react-select-custom-option {
+        padding: $react-select-custom-padding;
+        font-weight: $react-select-custom-font-weight;
+        @include transition();
+        &--is-focused {
+          background-color: $react-select-custom-hover-bg;
+          color: $react-select-custom-hover-color;
+          cursor: pointer;
+        }
+        &--is-selected {
+          > div {
+            color: $react-select-menu-selected-color;
+          }
+        }
+        .gecko-react-select-custom-option-meta {
+          font-weight: $react-select-custom-meta-font-weight;
+          font-size: $react-select-custom-meta-font-size;
+        }
+      }
+      .gecko-react-select__menu-notice {
+        text-align: left;
+        font-weight: $react-select-notice-font-weight;
+        color: $react-select-notice-color;
+      }
+    }
+  }
+}
