@@ -42,6 +42,7 @@
   background-color: var(--#{$prefix}accordion-btn-bg);
   border: 0;
   overflow-anchor: none;
+  font-feature-settings: "salt";
   @include transition(var(--#{$prefix}accordion-transition));
 
   &:not(.collapsed) {

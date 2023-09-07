@@ -35,6 +35,7 @@
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
   border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
+  font-feature-settings: "salt";
   @include border-radius(var(--#{$prefix}btn-border-radius));
   @include box-shadow(var(--#{$prefix}btn-box-shadow));
   @include transition($btn-transition);
