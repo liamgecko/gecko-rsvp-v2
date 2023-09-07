@@ -34,7 +34,9 @@
                         </div>
 
                         <div class="d-grid">
-                            <button type="button" class="btn-icon-right btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Login<i class="far fa-right-to-bracket"></i></button>
+                            <button type="button" class="btn-icon-right btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                                Login<i class="far fa-right-to-bracket"></i>
+                            </button>
                         </div>
 
                     </div>
@@ -48,12 +50,34 @@
     </div>
 
     <div class="offcanvas offcanvas-bottom offcanvas-mobile" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header flex-column align-items-start">
+            <button type="button" class="btn-close mb-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h2 class="offcanvas-title" id="offcanvasBottomLabel">Confirm your identity</h2>
+            <p class="text-secondary mb-0">We have sent a verification code to liam@geckoengage.com.</p>
         </div>
-        <div class="offcanvas-body small">
-          ...
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column justify-content-between" style="height: 100%;">
+                <div>
+                    <div class="verification-input-group row">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 1">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 2">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 3">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 4">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 5">
+                        <input class="form-control form-control-lg col mx-2" type="text" placeholder="" aria-label="Veri number 6">
+                    </div>
+                    <div class="verification-resend d-flex justify-content-center mt-3">
+                        <button type="button" class="btn-icon-left btn btn-sm btn-naked-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                            <i class="fas fa-rotate-right"></i>Resend code
+                        </button>
+                    </div>
+                </div>
+                <div class="change-email d-flex justify-content-center mt-3">
+                    <button type="button" class="btn-icon-left btn btn-sm btn-naked-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                        <i class="fas fa-arrow-left-long"></i>Use another email address
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
