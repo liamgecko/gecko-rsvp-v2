@@ -23,6 +23,12 @@ body {
         }
     }
 
+    .app-header {
+        .nav-tabs {
+            border: none;
+        }
+    }
+
     .app-footer {
         position: fixed;
         bottom: 0;
