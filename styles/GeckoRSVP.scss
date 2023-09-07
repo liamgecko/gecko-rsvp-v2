@@ -22,6 +22,30 @@ body {
             width: 100%;
         }
     }
+
+    .app-header {
+        padding-top: 44pt;
+    }
+
+    .app-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding-bottom: 34pt;
+        a {
+            color: $secondary;
+            &:hover,
+            &.active {
+                color: $primary;
+                i {
+                    font-weight: 600;
+                }
+            }
+            i {
+                font-weight: 400;
+            }
+        }
+    }
 }
 
 // Custom components
