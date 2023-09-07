@@ -16,9 +16,45 @@
 
 <body>
 
-    <div class="app-wrapper">
-            
+    <div class="app-wrapper mx-auto">
+          
+        <div class="app-login bg-white p-4 d-flex align-items-center align-content-center">
+
+            <div class="app-login-wrapper d-flex flex-column col">
+
+                <img src="img/logo.svg" alt="Gecko University" style="width: 210px;" class="mx-auto mb-2">
+
+                <div class="card shadow-sm border">
+
+                    <div class="card-body">
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="button" class="btn-icon-right btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Login<i class="far fa-right-to-bracket"></i></button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
         
+    </div>
+
+    <div class="offcanvas offcanvas-bottom offcanvas-mobile" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+          ...
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

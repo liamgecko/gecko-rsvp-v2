@@ -1,5 +1,27 @@
-.app-wrapper {
 
+@import "functions";
+@import "variables";
+@import "variables-dark";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+body {
+    background-color: $grey-200;
+}
+.app-wrapper {
+    background-color: $grey-100;
+    max-width: 428px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    
+    .app-login {
+        height: 100vh;
+        .app-login-wrapper {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (max-width: 1919px) {
