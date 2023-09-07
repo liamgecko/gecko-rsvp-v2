@@ -11,7 +11,7 @@ body {
 }
 .app-wrapper {
     background-color: $grey-100;
-    max-width: 428px;
+    max-width: 480px;
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
@@ -31,7 +31,8 @@ body {
         position: fixed;
         bottom: 0;
         width: 100%;
-        padding-bottom: 34pt;
+        padding-bottom: 33pt;
+        max-width: 480px;
         a {
             color: $secondary;
             &:hover,
