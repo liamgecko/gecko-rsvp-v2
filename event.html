@@ -46,7 +46,7 @@
                     <a class="nav-link px-0" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false">My itinerary</a>
                 </li>
                 <li class="nav-item me-0">
-                    <a class="nav-link px-0" href="#" id="ticket" data-bs-toggle="tab" data-bs-target="#ticket-tab-pane" type="button" role="tab" aria-controls="ticket-tab-pane" aria-selected="false">Ticket</a>
+                    <a class="nav-link px-0" href="#" id="ticket" data-bs-toggle="offcanvas" data-bs-target="#ticket-view" aria-controls="ticket-view" type="button" role="tab" aria-selected="false">Ticket</a>
                 </li>
             </ul>
 
@@ -115,84 +115,111 @@
 
                 <div class="tab-pane fade" id="my-itinerary-tab-pane" role="tabpanel" aria-labelledby="my-itinerary-tab" tabindex="0">
 
-                        <div class="event-filter d-flex justify-content-end mb-2">
+                    <div class="itinerary-wrapper">
 
-                            <div class="dropdown">
-                                <button class="btn btn-naked-primary btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="far fa-bars-filter me-1"></i>Filter past events
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Newest</a>
-                                    <a class="dropdown-item" href="#">Oldest</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="bookings-past">
-
-                        <div class="card booking-card rounded-4 bg-white mb-2">
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
 
                             <div class="card-body">
 
-                                <span class="badge bg-success mb-2">Attended</span>
-                                <h3 class="event-title">Open Day - July 2023</h3>
+                                <h3 class="event-title">Welcome to Gecko University</h3>
                                 <div class="event-meta fs-3 mb-4">
-                                    <i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span>
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 9.30am</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
                                 </div>
-                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary">
-                                    <i class="far fa-star"></i>Review event
+                                <button type="button" class="btn-icon-left btn-sm btn btn-primary">
+                                    <i class="far fa-user-check"></i>Check in open
                                 </button>
 
                             </div>
 
                         </div>
 
-                        <div class="card booking-card rounded-4 bg-white mb-2">
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
 
                             <div class="card-body">
 
-                                <span class="badge bg-success mb-2">Attended</span>
-                                <h3 class="event-title">Open Day - July 2023</h3>
+                                <h3 class="event-title">Accommodation @ Gecko U</h3>
                                 <div class="event-meta fs-3 mb-4">
-                                    <i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span>
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 10, Dundas Campus</span></div>
                                 </div>
-                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary">
-                                    <i class="far fa-star"></i>Review event
+                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                    <i class="far fa-user-check"></i>Check in opens at 10.20am
                                 </button>
 
                             </div>
 
                         </div>
 
-                        <div class="card booking-card rounded-4 bg-white mb-2">
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
 
                             <div class="card-body">
 
-                                <span class="badge bg-success mb-2">Attended</span>
-                                <h3 class="event-title">Open Day - July 2023</h3>
+                                <h3 class="event-title">Finance 101</h3>
                                 <div class="event-meta fs-3 mb-4">
-                                    <i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span>
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 12.30pm</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Cube, Gecko Campus</span></div>
                                 </div>
-                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary">
-                                    <i class="far fa-star"></i>Review event
+                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                    <i class="far fa-user-check"></i>Check in opens at 12.20pm
                                 </button>
 
                             </div>
 
                         </div>
 
-                        <div class="card booking-card rounded-4 bg-white mb-2">
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
 
                             <div class="card-body">
 
-                                <span class="badge bg-success mb-2">Attended</span>
-                                <h3 class="event-title">Open Day - July 2023</h3>
+                                <h3 class="event-title">Introduction to Social Sciences</h3>
                                 <div class="event-meta fs-3 mb-4">
-                                    <i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span>
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2pm</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Auditorium, Fettes Campus</span></div>
                                 </div>
-                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary">
-                                    <i class="far fa-star"></i>Review event
+                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                    <i class="far fa-user-check"></i>Check in opens at 1.50pm
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
+
+                            <div class="card-body">
+
+                                <h3 class="event-title">Meet the Social Science Team</h3>
+                                <div class="event-meta fs-3 mb-4">
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2.30pm</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 3, Fettes Campus</span></div>
+                                </div>
+                                <span class="badge bg-warning mb-2"><i class="far fa-calendar-exclamation me-1"></i>Waitlisted</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="event-warning py-2 pb-4">
+
+                            <div class="d-flex flex-row align-items-center">
+                                <i class="far fa-exclamation-triangle me-2"></i>
+                                <span class="text-secondary fs-3">Your next session takes place at a different location, please allow time for travel between locations.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="card booking-card rounded-4 bg-white mb-2 border">
+
+                            <div class="card-body">
+
+                                <h3 class="event-title">Closing Keynote</h3>
+                                <div class="event-meta fs-3 mb-4">
+                                    <div><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 4.30pm</span></div>
+                                    <div><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
+                                </div>
+                                <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                    <i class="far fa-user-check"></i>Check in opens at 4.20pm
                                 </button>
 
                             </div>
@@ -207,6 +234,37 @@
 
         </div>
         
+    </div>
+
+    <div class="offcanvas offcanvas-bottom offcanvas-mobile" tabindex="-1" id="ticket-view" aria-labelledby="ticket-view">
+        <div class="offcanvas-header flex-column align-items-start">
+            <button type="button" class="btn-close mb-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h2 class="offcanvas-title" id="offcanvasBottomLabel">New event portal event title - September 2023</h2>
+            <p class="text-secondary mb-0"><i class="text-primary fal fa-calendar-alt me-1"></i>Sunday 9th July at 9am - 5pm</p>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="qr-code d-flex justify-content-center my-2">
+                <img src="img/qrcode.png" />
+            </div>
+            <div class="ticket-name d-flex flex-row align-items-center border-top border-bottom py-4 px-4 mt-6">
+                <div class="event-info-icon me-3 text-center">
+                    <i class="fal fa-user"></i>
+                </div>
+                <div class="ticket-name-meta d-flex flex-column">
+                    <span class="fs-3 text-secondary">Attendee</span>
+                    <span class="fw-medium">Liam Young</span>
+                </div>
+            </div>
+            <div class="guests d-flex flex-row align-items-center border-bottom py-4 px-4">
+                <div class="event-info-icon me-3 text-center">
+                    <i class="fal fa-users"></i>
+                </div>
+                <div class="guests-meta d-flex flex-column">
+                    <span class="fs-3 text-secondary">Guests</span>
+                    <span class="fw-medium">2 guests</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
