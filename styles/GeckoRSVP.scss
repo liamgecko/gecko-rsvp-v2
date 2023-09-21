@@ -9,6 +9,7 @@
 body {
     background-color: $grey-200;
 }
+
 .app-wrapper {
     background-color: $grey-100;
     max-width: 480px;
@@ -24,6 +25,10 @@ body {
     }
 
     .app-header {
+        .app-heading {
+            width: 100%;
+            max-width: 85%;
+        }
         .nav-tabs {
             border: none;
         }
@@ -52,7 +57,20 @@ body {
     }
 
     .app-body {
-        padding-bottom: 100px;
+        .event-info-wrapper {
+            .event-info-icon {
+                width: 16px;
+            }
+            .location-map-wrapper {
+                .map-btn {
+                    left: 16px;
+                    bottom: 16px;
+                }
+            }
+        }
+        p:last-of-type {
+            margin: 0;
+        }
     }
 }
 
