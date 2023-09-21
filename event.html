@@ -66,7 +66,7 @@
 
                         <div class="event-info-details mb-6 pb-6 border-bottom">
                             <div class="d-flex flex-row">
-                                <div class="event-info-icon fs-1 me-2">
+                                <div class="event-info-icon fs-1 me-3">
                                     <i class="fal fa-calendar-alt"></i>
                                 </div>
                                 <div class="event-meta">
@@ -78,28 +78,33 @@
 
                         <div class="event-info-location mb-6 pb-6 border-bottom">
                             <div class="d-flex flex-row">
-                                <div class="event-info-icon fs-1 me-2">
+                                <div class="event-info-icon fs-1 me-3">
                                     <i class="fal fa-map-marker-alt"></i>
                                 </div>
                                 <div class="event-meta">
                                     <h3>Where?</h3>
                                     <span class="fw-medium d-block">University of Gecko</span>
                                     <span class="text-secondary d-block">116 Dundas Street, Edinburgh EH1 9LY</span>
+                                    <a class="mt-3 d-block text-decoration-none" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Show map <i class="far fa-angle-down ms-1"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="event-info-location-map">
-                                <div class="location-map-wrapper position-relative mt-6">
-                                    <img src="img/map.png" class="img-fluid rounded" alt="" />
-                                    <button class="map-btn btn btn-primary btn-icon-left position-absolute" type="button">
-                                        <i class="far fa-route"></i> Get directions
-                                    </button>
-                                </div>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="location-map-wrapper position-relative mt-6">
+                                        <img src="img/map.png" class="img-fluid rounded" alt="" />
+                                        <button class="map-btn btn btn-primary btn-icon-left position-absolute" type="button">
+                                            <i class="far fa-route"></i> Get directions
+                                        </button>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
 
                         <div class="event-info-details">
                             <div class="d-flex flex-row">
-                                <div class="event-info-icon fs-1 me-2">
+                                <div class="event-info-icon fs-1 me-3">
                                     <i class="fal fa-info-circle"></i>
                                 </div>
                                 <div class="event-meta">

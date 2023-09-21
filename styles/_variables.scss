@@ -548,10 +548,10 @@ $font-family-code:            var(--#{$prefix}font-monospace) !default;
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
 // $font-size-base affects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              1rem !default; // 14px
-$font-size-sm:                $font-size-base * .85714 !default; // 12px
-$font-size-xs:                $font-size-base * .71429 !default; // 10px
-$font-size-lg:                $font-size-base * 1.1429 !default; // 16px
+$font-size-base:              1rem !default; // 16px
+$font-size-sm:                $font-size-base * 0.875 !default; // 14px
+$font-size-xs:                $font-size-base * 0.75 !default; // 12px
+$font-size-lg:                $font-size-base * 1.125 !default; // 18px
 
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
@@ -565,21 +565,21 @@ $line-height-base:            1.3 !default;
 $line-height-sm:              1.2 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 1.7143 !default;
-$h2-font-size:                $font-size-base * 1.2857 !default;
-$h3-font-size:                $font-size-base * 1.143 !default;
+$h1-font-size:                $font-size-base * 1.375 !default;
+$h2-font-size:                $font-size-base * 1.25 !default;
+$h3-font-size:                $font-size-base * 1.125 !default;
 $h4-font-size:                $font-size-base !default;
 $h5-font-size:                $font-size-sm !default;
 $h6-font-size:                $font-size-sm !default;
 
-$icon-size-base:              $font-size-base * .92857; // 13px
+$icon-size-base:              $font-size-base * 0.813; // 13px
 
-$icon-size-2xs:               $font-size-base * .5; // 7px
-$icon-size-xs:                $font-size-base * .64286; // 9px
-$icon-size-sm:                $font-size-base * .78571; // 11px
-$icon-size-lg:                $font-size-base * 1.0714; // 15px
-$icon-size-xl:                $font-size-base * 1.2143; // 17px
-$icon-size-2xl:               $font-size-base * 1.7143; // 23px
+$icon-size-2xs:               $font-size-base * 0.438; // 7px
+$icon-size-xs:                $font-size-base * 0.563; // 9px
+$icon-size-sm:                $font-size-base * 0.688; // 11px
+$icon-size-lg:                $font-size-base * 0.938; // 15px
+$icon-size-xl:                $font-size-base * 1.063; // 17px
+$icon-size-2xl:               $font-size-base * 1.313; // 23px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -885,7 +885,7 @@ $btn-outline-disabled-color:      $btn-naked-primary-disabled-color;
 $btn-outline-disabled-border:     transparent;
 $btn-outline-focus-box-shadow:    $btn-naked-primary-focus-box-shadow;
 
-$btn-icon-right-margin:           $spacer / 2;
+$btn-icon-right-margin:           $spacer;
 $btn-icon-left-margin:            $btn-icon-right-margin;
 $btn-sm-icon-right-margin:        $btn-icon-right-margin;
 $btn-sm-icon-left-margin:         $btn-sm-icon-right-margin;

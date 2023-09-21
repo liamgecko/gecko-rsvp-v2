@@ -252,24 +252,12 @@
     i {
       margin-right: $btn-icon-right-margin;
     }
-    &.btn-sm {
-      svg,
-      i {
-        margin-right: $btn-sm-icon-right-margin;
-      }
-    }
   }
 
   &.btn-icon-right {
     svg,
     i {
       margin-left: $btn-icon-left-margin;
-    }
-    &.btn-sm {
-      svg,
-      i {
-        margin-left: $btn-sm-icon-left-margin;
-      }
     }
   }
 
@@ -278,12 +266,12 @@
     margin-right: $btn-icon-right-margin;
   }
 
-  &.btn-sm {
-    > svg,
-    > i {
-      margin-right: $btn-sm-icon-right-margin;
-    }
-  }
+  // &.btn-sm {
+  //   > svg,
+  //   > i {
+  //     margin-right: $btn-sm-icon-right-margin;
+  //   }
+  // }
 
   &.btn-icon {
     min-width: 30px;
