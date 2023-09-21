@@ -71,7 +71,7 @@ body {
         }
         .itinerary-item {
             position: relative;
-            &:before {
+            &::before {
                 content: "";
                 height: 100%;
                 width: 1px;
@@ -86,6 +86,9 @@ body {
                 height: 24px;
                 width: 24px;
                 outline: 4px solid $grey-100;
+                i {
+                    font-size: $icon-size-sm;
+                }
             }
             .card {
                 flex: 1 0 0%;
