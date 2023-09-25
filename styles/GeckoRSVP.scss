@@ -107,12 +107,13 @@
         .app-event-nav {
             overflow: auto;
             white-space: nowrap;
+            flex-wrap: nowrap;
             -ms-overflow-style: none;
             scrollbar-width: none; 
             &::-webkit-scrollbar {
                 display: none;
             }
-            a.event-nav-link {
+            .nav-link {
                 background-color: $grey-200;
                 border-radius: $border-radius;
                 color: $secondary;

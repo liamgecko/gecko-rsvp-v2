@@ -121,199 +121,261 @@
 
                 <div class="tab-pane fade" id="my-itinerary-tab-pane" role="tabpanel" aria-labelledby="my-itinerary-tab" tabindex="0">
 
-                    <div class="app-event-nav p-4 border-bottom bg-white fs-3">
+                    <div class="app-event-nav nav nav-pills p-4 border-bottom bg-white fs-3">
 
-                        <a href="event-other.html" class="event-nav-link">Friday, 7th July</a>
-                        <a href="event-other.html" class="event-nav-link">Saturday, 8th July</a>
-                        <a href="" class="event-nav-link active">Sunday, 9th July</a>
-                        <a href="event-other.html" class="event-nav-link">Monday, 10th July</a>
+                        <button class="nav-link me-1" id="day-one-tab" data-bs-toggle="tab" data-bs-target="#day-one" type="button" role="tab" aria-controls="day-one" aria-selected="true">Friday, 7th July</button>
+                        <button class="nav-link me-1" id="day-two-tab" data-bs-toggle="tab" data-bs-target="#day-two" type="button" role="tab" aria-controls="day-two" aria-selected="false">Saturday, 8th July</button>
+                        <button class="nav-link me-1 active" id="day-three-tab" data-bs-toggle="tab" data-bs-target="#day-three" type="button" role="tab" aria-controls="day-three" aria-selected="false">Sunday, 9th July</button>
+                        <button class="nav-link" id="day-four-tab" data-bs-toggle="tab" data-bs-target="#day-four" type="button" role="tab" aria-controls="day-four" aria-selected="false">Monday, 10th July</button>
             
                     </div>
 
-                    <div class="itinerary-wrapper px-4 pt-6">
+                    <div class="tab-content">
+                        <div class="tab-pane" id="day-one" role="tabpanel" aria-labelledby="day-one-tab" tabindex="0">
 
-                        <div class="itinerary-item d-flex flex-row pb-4 align-items-center">
+                            <div class="itinerary-wrapper px-4 pt-6">
 
-                            <span class="timeline-check rounded-circle border bg-white d-flex me-2 position-relative justify-content-center align-items-center">
-                                <i class="fal fa-calendar-check"></i>
-                            </span>
-
-                            <span class="fs-3 fw-medium">Event registration open from 9am</span>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <a href="session-single.html" class="card booking-card rounded-4 bg-white mb-2 border text-decoration-none">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Welcome to Gecko University</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 9.30am</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
-                                    </div>
-                                    <button type="button" class="btn-icon-left btn-sm btn btn-primary">
-                                        <i class="far fa-user-check"></i>Check in
-                                    </button>
-
+                                <div class="itinerary-none d-flex flex-column justify-content-center text-center">
+        
+                                    <i class="fal fa-calendar-circle-exclamation mb-1"></i>
+                                    <h3>No sessions booked</h3>
+                                    <p>It looks like you have no sessions booked for Friday, 7th July.</p>
+                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                    </a>
+        
                                 </div>
-
-                            </a>
-                    
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <a href="multi-session.html" class="card booking-card rounded-4 bg-white mb-2 border text-decoration-none">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Accommodation @ Gecko U</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 10, Dundas Campus</span></div>
-                                    </div>
-                                    <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
-                                        <i class="far fa-user-check"></i>Check in opens at 10.20am
-                                    </button>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <div class="card booking-card rounded-4 bg-white mb-2 border">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Finance 101</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 12.30pm</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Cube, Gecko Campus</span></div>
-                                    </div>
-                                    <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
-                                        <i class="far fa-user-check"></i>Check in opens at 12.20pm
-                                    </button>
-
-                                </div>
-
+        
                             </div>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <div class="card booking-card rounded-4 bg-white mb-2 border">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Introduction to Social Sciences</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2pm</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Auditorium, Fettes Campus</span></div>
-                                    </div>
-                                    <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
-                                        <i class="far fa-user-check"></i>Check in opens at 1.50pm
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <div class="card booking-card rounded-4 bg-white mb-2 border">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Meet the Social Science Team</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2.30pm</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 3, Fettes Campus</span></div>
-                                    </div>
-                                    <span class="badge bg-warning"><i class="far fa-calendar-exclamation me-1"></i>Waitlisted</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="itinerary-item">
-
-                            <div class="event-warning py-2 pb-4">
-
-                                <div class="d-flex flex-row align-items-center">
-                                    <i class="far fa-exclamation-triangle me-2"></i>
-                                    <span class="text-secondary fs-3">Your next session takes place at a different location, please allow time for travel between locations.</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row">
-
-                            <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
-
-                            <div class="card booking-card rounded-4 bg-white border">
-
-                                <div class="card-body">
-
-                                    <h3 class="event-title overflow mb-2">Closing Keynote</h3>
-                                    <div class="event-meta fs-3 mb-4">
-                                        <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 4.30pm</span></div>
-                                        <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
-                                    </div>
-                                    <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
-                                        <i class="far fa-user-check"></i>Check in opens at 4.20pm
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="itinerary-item d-flex flex-row pt-4 align-items-center">
-
-                            <span class="timeline-check rounded-circle border bg-white d-flex me-2 position-relative justify-content-center align-items-center">
-                                <i class="fal fa-calendar-check"></i>
-                            </span>
-
-                            <span class="fs-3 fw-medium">Event close 9am</span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="app-footer position-fixed bg-white shadow pt-4 pb-6 px-4">
-
-                        <div class="d-grid">
-
-                            <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-outline-primary">
-                                <i class="far fa-calendar-circle-plus"></i>Book more sessions
-                            </a>
                             
                         </div>
-            
-                    </div>
+
+                        <div class="tab-pane" id="day-two" role="tabpanel" aria-labelledby="day-two-tab" tabindex="0">
+
+                            <div class="itinerary-wrapper px-4 pt-6">
+
+                                <div class="itinerary-none d-flex flex-column justify-content-center text-center">
+        
+                                    <i class="fal fa-calendar-circle-exclamation mb-1"></i>
+                                    <h3>No sessions booked</h3>
+                                    <p>It looks like you have no sessions booked for Saturday, 8th July.</p>
+                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                    </a>
+        
+                                </div>
+        
+                            </div>
+
+                        </div>
+                        <div class="tab-pane active" id="day-three" role="tabpanel" aria-labelledby="day-three-tab" tabindex="0">
+
+                            <div class="itinerary-wrapper px-4 pt-6">
+
+                                <div class="itinerary-item d-flex flex-row pb-4 align-items-center">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-flex me-2 position-relative justify-content-center align-items-center">
+                                        <i class="fal fa-calendar-check"></i>
+                                    </span>
+        
+                                    <span class="fs-3 fw-medium">Event registration open from 9am</span>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <a href="session-single.html" class="card booking-card rounded-4 bg-white mb-2 border text-decoration-none">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Welcome to Gecko University</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 9.30am</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
+                                            </div>
+                                            <button type="button" class="btn-icon-left btn-sm btn btn-primary">
+                                                <i class="far fa-user-check"></i>Check in
+                                            </button>
+        
+                                        </div>
+        
+                                    </a>
+                            
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <a href="multi-session.html" class="card booking-card rounded-4 bg-white mb-2 border text-decoration-none">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Accommodation @ Gecko U</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 10.30am</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 10, Dundas Campus</span></div>
+                                            </div>
+                                            <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                                <i class="far fa-user-check"></i>Check in opens at 10.20am
+                                            </button>
+        
+                                        </div>
+        
+                                    </a>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <div class="card booking-card rounded-4 bg-white mb-2 border">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Finance 101</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 12.30pm</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Cube, Gecko Campus</span></div>
+                                            </div>
+                                            <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                                <i class="far fa-user-check"></i>Check in opens at 12.20pm
+                                            </button>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <div class="card booking-card rounded-4 bg-white mb-2 border">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Introduction to Social Sciences</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2pm</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Auditorium, Fettes Campus</span></div>
+                                            </div>
+                                            <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                                <i class="far fa-user-check"></i>Check in opens at 1.50pm
+                                            </button>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <div class="card booking-card rounded-4 bg-white mb-2 border">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Meet the Social Science Team</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 2.30pm</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">Room 3, Fettes Campus</span></div>
+                                            </div>
+                                            <span class="badge bg-warning"><i class="far fa-calendar-exclamation me-1"></i>Waitlisted</span>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="itinerary-item">
+        
+                                    <div class="event-warning py-2 pb-4">
+        
+                                        <div class="d-flex flex-row align-items-center">
+                                            <i class="far fa-exclamation-triangle me-2"></i>
+                                            <span class="text-secondary fs-3">Your next session takes place at a different location, please allow time for travel between locations.</span>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-block me-2 position-relative"></span>
+        
+                                    <div class="card booking-card rounded-4 bg-white border">
+        
+                                        <div class="card-body">
+        
+                                            <h3 class="event-title overflow mb-2">Closing Keynote</h3>
+                                            <div class="event-meta fs-3 mb-4">
+                                                <div class="mb-1"><i class="fal fa-calendar-alt me-1"></i> <span class="text-secondary">9th July at 4.30pm</span></div>
+                                                <div class="mb-1"><i class="fal fa-map-marker-alt me-1"></i> <span class="text-secondary">The Atrium, Dundas Campus</span></div>
+                                            </div>
+                                            <button type="button" class="btn-icon-left btn-sm btn btn-secondary" disabled>
+                                                <i class="far fa-user-check"></i>Check in opens at 4.20pm
+                                            </button>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="itinerary-item d-flex flex-row pt-4 align-items-center">
+        
+                                    <span class="timeline-check rounded-circle border bg-white d-flex me-2 position-relative justify-content-center align-items-center">
+                                        <i class="fal fa-calendar-check"></i>
+                                    </span>
+        
+                                    <span class="fs-3 fw-medium">Event close 9am</span>
+        
+                                </div>
+        
+                            </div>
+
+                            <div class="app-footer position-fixed bg-white shadow pt-4 pb-6 px-4">
+
+                                <div class="d-grid">
+        
+                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-outline-primary">
+                                        <i class="far fa-calendar-circle-plus"></i>Book more sessions
+                                    </a>
+                                    
+                                </div>
+                    
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="day-four" role="tabpanel" aria-labelledby="day-four-tab" tabindex="0">
+
+                            <div class="itinerary-wrapper px-4 pt-6">
+
+                                <div class="itinerary-none d-flex flex-column justify-content-center text-center">
+        
+                                    <i class="fal fa-calendar-circle-exclamation mb-1"></i>
+                                    <h3>No sessions booked</h3>
+                                    <p>It looks like you have no sessions booked for Monday, 10th July.</p>
+                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                    </a>
+        
+                                </div>
+        
+                            </div>
+
+                        </div>
+
+                      </div>
 
                 </div>
 
