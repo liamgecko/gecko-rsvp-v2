@@ -52,7 +52,6 @@
     padding: var(--#{$prefix}toast-padding-x);
     word-wrap: break-word;
     @include flex-vertical();
-    justify-content: space-between;
     .toast-main-body {
       @include flex-vertical();
       padding-right: $toast-body-padding;

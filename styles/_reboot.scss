@@ -48,6 +48,7 @@
 // scss-docs-start reboot-body-rules
 html {
   font-size: 100%;
+  background-color: var(--#{$prefix}body-bg);
 }
 body {
   margin: 0; // 1

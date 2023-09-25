@@ -6,26 +6,21 @@
 @import "mixins";
 @import "utilities";
 
-body {
-    background-color: $grey-200;
-}
-
 .app-wrapper {
     background-color: $grey-100;
     width: 100%;
     overflow-y: scroll;
-    
-    .app-login {
-        height: 100vh;
-        .app-login-wrapper {
-            width: 100%;
-        }
-    }
 
     .app-header {
         .app-heading {
             width: 100%;
             max-width: 80%;
+        }
+        .event-sub-heading {
+            font-size: $font-size-xs;
+        }
+        .btn-back {
+            color: $primary;
         }
         .nav-tabs {
             border: none;
@@ -33,28 +28,16 @@ body {
     }
 
     .app-footer {
-        position: fixed;
         bottom: 0;
         width: 100%;
-        max-width: 480px;
-        a {
-            color: $secondary;
-            &:hover,
-            &.active {
-                color: $primary;
-                i {
-                    font-weight: 600;
-                    @include transition();
-                }
-            }
-            i {
-                font-weight: 300;
-                font-size: $font-size-lg;
-            }
-        }
+        left: 0;
+        right: 0;
     }
 
     .app-body {
+        &.with-footer {
+            padding-bottom: 88px;
+        }
         .event-info-wrapper {
             .event-info-icon {
                 width: 16px;
@@ -65,36 +48,81 @@ body {
                     bottom: 16px;
                 }
             }
+            .event-host-details {
+                img {
+                    width: 44px;
+                    height: 44px;
+                }
+            }
         }
         p:last-of-type {
             margin: 0;
         }
-        .itinerary-item {
-            position: relative;
-            &::before {
-                content: "";
-                height: 100%;
-                width: 1px;
-                position: absolute;
-                left: 12px;
-                top: 0;
-                bottom: 0;
-                background: $border-color;
-                z-index: 0;
-            }
-            .timeline-check {
-                height: 24px;
-                width: 24px;
-                outline: 4px solid $grey-100;
-                i {
-                    font-size: 11px;
+        .itinerary-wrapper {
+            .itinerary-item {
+                position: relative;
+                &::before {
+                    content: "";
+                    height: 100%;
+                    width: 1px;
+                    position: absolute;
+                    left: 12px;
+                    top: 0;
+                    bottom: 0;
+                    background: $border-color;
+                    z-index: 0;
+                }
+                .timeline-check {
+                    height: 24px;
+                    width: 24px;
+                    outline: 4px solid $grey-100;
+                    i {
+                        font-size: 11px;
+                    }
                 }
             }
+        }
+        .itinerary-item {
             .card {
                 flex: 1 0 0%;
             }
             .event-warning {
                 padding-left: 34px;
+            }
+            .event-title {
+                font-size: 1rem;
+                color: $primary
+            }
+            .event-meta {
+                i {
+                    color: $primary;
+                }
+            }
+        }
+        .itinerary-none {
+            > i {
+                font-size: $icon-size-2xl;
+            }
+        }
+        .app-event-nav {
+            overflow: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            a.event-nav-link {
+                background-color: $grey-200;
+                border-radius: $border-radius;
+                color: $secondary;
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                text-decoration: none;
+                &.active {
+                    background-color: $grey-300;
+                    color: $primary;
+                }
             }
         }
     }
