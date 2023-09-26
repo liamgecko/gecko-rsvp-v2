@@ -201,7 +201,7 @@ body {
         .booking-header,
         .session-header,
         .itinerary-header {
-            display: none;
+            display: none !important;
         }
     }
 }
