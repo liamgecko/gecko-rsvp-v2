@@ -66,7 +66,7 @@
                     <a class="nav-link rounded p-2" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false"><i class="fal fa-clipboard-list-check me-2"></i>My itinerary</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link rounded p-2" href="#" id="ticket" data-bs-toggle="offcanvas" data-bs-target="#ticket-view" aria-controls="ticket-view" type="button" role="tab" aria-selected="false"><i class="fal fa-qrcode me-2"></i>Ticket</a>
+                    <a class="nav-link rounded p-2" href="#" id="ticket" data-bs-toggle="modal" data-bs-target="#ticket-modal" type="button" role="tab" aria-selected="false"><i class="fal fa-qrcode me-2"></i>Ticket</a>
                 </li>
                 <li class="nav-item mb-2">
                     <div class="dropdown">
@@ -208,9 +208,17 @@
                             </div>
 
                         </div>
+
                         <div class="tab-pane active" id="day-three" role="tabpanel" aria-labelledby="day-three-tab" tabindex="0">
 
                             <div class="itinerary-wrapper px-4 pt-6">
+
+                                <div class="itinerary-header d-flex justify-content-between align-items-center border-bottom pb-6 mb-8">
+                                    <h2 class="mb-0">New event portal event title - September 2023</h2>
+                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-sm btn-primary">
+                                        <i class="far fa-calendar-circle-plus" aria-hidden="true"></i>Book more sessions
+                                    </a>
+                                </div>
 
                                 <div class="itinerary-item d-flex flex-row pb-4 align-items-center">
         
@@ -452,7 +460,7 @@
         
     </div>
 
-    <div class="offcanvas offcanvas-bottom offcanvas-mobile" tabindex="-1" id="ticket-view" aria-labelledby="ticket-view">
+    <div class="offcanvas offcanvas-bottom offcanvas-mobile ticket" tabindex="-1" id="ticket-view" aria-labelledby="ticket-view">
         <div class="offcanvas-header flex-column align-items-start">
             <button type="button" class="btn-close mb-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             <h2 class="offcanvas-title" id="offcanvasBottomLabel">New event portal event title - September 2023</h2>
@@ -516,6 +524,40 @@
             <div class="modal-footer">
                 <div class="d-grid">
                     <button type="button" class="btn btn-lg btn-primary"><i class="far fa-user-pen"></i>Update guests</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade ticket" id="ticket-modal" tabindex="-1" aria-labelledby="ticket-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-0">Your ticket</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="qr-code d-flex justify-content-center my-2">
+                    <img src="img/qrcode.png" />
+                </div>
+                <div class="ticket-name d-flex flex-row align-items-center border-top border-bottom py-4 mt-6">
+                    <div class="event-info-icon me-3 text-center">
+                        <i class="fal fa-user"></i>
+                    </div>
+                    <div class="ticket-name-meta d-flex flex-column">
+                        <span class="fs-3 text-secondary">Attendee</span>
+                        <span class="fw-medium">Liam Young</span>
+                    </div>
+                </div>
+                <div class="guests d-flex flex-row align-items-center border-bottom py-4">
+                    <div class="event-info-icon me-3 text-center">
+                        <i class="fal fa-users"></i>
+                    </div>
+                    <div class="guests-meta d-flex flex-column">
+                        <span class="fs-3 text-secondary">Guests</span>
+                        <span class="fw-medium">2 guests</span>
+                    </div>
                 </div>
             </div>
             </div>

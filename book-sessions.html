@@ -42,9 +42,58 @@
 
         </div>
 
+        <div class="app-sidebar pt-4">
+
+            <div class="sidebar-logo border-bottom px-4 pb-2">
+                <img src="img/customer-logo.png" class="img-fluid" alt="" />
+            </div>
+
+            <ul class="sidebar-menu p-4" role="tablist">
+                <li class="nav-item mb-2">
+                    <a class="nav-link p-2 rounded active" id="event-info" data-bs-toggle="tab" data-bs-target="#event-info-tab-pane" type="button" role="tab" aria-controls="event-info-tab-pane" aria-selected="true" aria-current="page" href="#"><i class="fal fa-calendars me-2"></i>Event information</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false"><i class="fal fa-clipboard-list-check me-2"></i>My itinerary</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="ticket" data-bs-toggle="modal" data-bs-target="#ticket-modal" type="button" role="tab" aria-selected="false"><i class="fal fa-qrcode me-2"></i>Ticket</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <div class="dropdown">
+                        <a class="nav-link rounded p-2" href="#" id="manage-booking" data-bs-toggle="dropdown" type="button" role="tab" aria-selected="false"><i class="fal fa-cog me-2"></i>Manage booking</a>
+                        <div class="dropdown-menu" aria-labelledby="manage-booking">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#edit-guests">Edit guests</a>
+                            <a class="dropdown-item" href="#">Add to calendar</a>
+                            <a class="dropdown-item" href="#">Print ticket</a>
+                            <a class="dropdown-item delete" href="#" data-bs-toggle="modal" data-bs-target="#remove-booking">Remove booking</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
         <div class="app-body">
 
             <div class="session-book-wrapper px-4 py-6">
+
+                <div class="booking-header">
+
+                    <div class="event-back-btn fs-3 fw-medium mb-2">
+                        <a href="event.html"><i class="far fa-arrow-left-long me-2"></i>Back to itinerary</a>
+                    </div>
+
+                    <div class="app-heading mb-4">
+                        <h1 class="event-heading mb-0">Book sessions</h1>
+                        <span class="event-sub-heading text-secondary d-block overflow">New event portal event title - September 2023</span>
+                    </div>
+
+                    <div class="input-icon input-icon-left mb-4">
+                        <input placeholder="Search sessions" type="text" id="iconLeft" class="form-control form-control-lg">
+                        <i class="far fa-search"></i>
+                    </div>
+
+                </div>
 
                 <div class="itinerary-item d-flex flex-row">
 
@@ -214,6 +263,40 @@
         <div id="booking-success" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
                 <i class="fas fa-check-circle text-green-500 me-4"></i>Single time session added to itinerary
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade ticket" id="ticket-modal" tabindex="-1" aria-labelledby="ticket-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mb-0">Your ticket</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="qr-code d-flex justify-content-center my-2">
+                    <img src="img/qrcode.png" />
+                </div>
+                <div class="ticket-name d-flex flex-row align-items-center border-top border-bottom py-4 mt-6">
+                    <div class="event-info-icon me-3 text-center">
+                        <i class="fal fa-user"></i>
+                    </div>
+                    <div class="ticket-name-meta d-flex flex-column">
+                        <span class="fs-3 text-secondary">Attendee</span>
+                        <span class="fw-medium">Liam Young</span>
+                    </div>
+                </div>
+                <div class="guests d-flex flex-row align-items-center border-bottom py-4">
+                    <div class="event-info-icon me-3 text-center">
+                        <i class="fal fa-users"></i>
+                    </div>
+                    <div class="guests-meta d-flex flex-column">
+                        <span class="fs-3 text-secondary">Guests</span>
+                        <span class="fw-medium">2 guests</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
