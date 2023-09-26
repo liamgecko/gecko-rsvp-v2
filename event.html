@@ -52,6 +52,37 @@
 
         </div>
 
+        <div class="app-sidebar pt-4">
+
+            <div class="sidebar-logo border-bottom px-4 pb-2">
+                <img src="img/customer-logo.png" class="img-fluid" alt="" />
+            </div>
+
+            <ul class="sidebar-menu p-4" role="tablist">
+                <li class="nav-item mb-2">
+                    <a class="nav-link p-2 rounded active" id="event-info" data-bs-toggle="tab" data-bs-target="#event-info-tab-pane" type="button" role="tab" aria-controls="event-info-tab-pane" aria-selected="true" aria-current="page" href="#"><i class="fal fa-calendars me-2"></i>Event information</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false"><i class="fal fa-clipboard-list-check me-2"></i>My itinerary</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="ticket" data-bs-toggle="offcanvas" data-bs-target="#ticket-view" aria-controls="ticket-view" type="button" role="tab" aria-selected="false"><i class="fal fa-qrcode me-2"></i>Ticket</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <div class="dropdown">
+                        <a class="nav-link rounded p-2" href="#" id="manage-booking" data-bs-toggle="dropdown" type="button" role="tab" aria-selected="false"><i class="fal fa-cog me-2"></i>Manage booking</a>
+                        <div class="dropdown-menu" aria-labelledby="manage-booking">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#edit-guests">Edit guests</a>
+                            <a class="dropdown-item" href="#">Add to calendar</a>
+                            <a class="dropdown-item" href="#">Print ticket</a>
+                            <a class="dropdown-item delete" href="#" data-bs-toggle="modal" data-bs-target="#remove-booking">Remove booking</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
         <div class="app-body with-footer">
 
             <div class="tab-content" id="app-body-tab-content">
@@ -62,6 +93,7 @@
 
                         <div class="event-img mb-6">
                             <img src="img/event-img.jpg" class="img-fluid rounded" alt="" />
+                            <h1>New event portal event title - September 2023</h1>
                         </div>
 
                         <div class="event-info-details mb-6 pb-6 border-bottom">
@@ -123,10 +155,14 @@
 
                     <div class="app-event-nav nav nav-pills p-4 border-bottom bg-white fs-3">
 
-                        <button class="nav-link me-1" id="day-one-tab" data-bs-toggle="tab" data-bs-target="#day-one" type="button" role="tab" aria-controls="day-one" aria-selected="true">Friday, 7th July</button>
-                        <button class="nav-link me-1" id="day-two-tab" data-bs-toggle="tab" data-bs-target="#day-two" type="button" role="tab" aria-controls="day-two" aria-selected="false">Saturday, 8th July</button>
-                        <button class="nav-link me-1 active" id="day-three-tab" data-bs-toggle="tab" data-bs-target="#day-three" type="button" role="tab" aria-controls="day-three" aria-selected="false">Sunday, 9th July</button>
-                        <button class="nav-link" id="day-four-tab" data-bs-toggle="tab" data-bs-target="#day-four" type="button" role="tab" aria-controls="day-four" aria-selected="false">Monday, 10th July</button>
+                        <div>
+
+                            <button class="nav-link me-1" id="day-one-tab" data-bs-toggle="tab" data-bs-target="#day-one" type="button" role="tab" aria-controls="day-one" aria-selected="true">Friday, 7th July</button>
+                            <button class="nav-link me-1" id="day-two-tab" data-bs-toggle="tab" data-bs-target="#day-two" type="button" role="tab" aria-controls="day-two" aria-selected="false">Saturday, 8th July</button>
+                            <button class="nav-link me-1 active" id="day-three-tab" data-bs-toggle="tab" data-bs-target="#day-three" type="button" role="tab" aria-controls="day-three" aria-selected="false">Sunday, 9th July</button>
+                            <button class="nav-link" id="day-four-tab" data-bs-toggle="tab" data-bs-target="#day-four" type="button" role="tab" aria-controls="day-four" aria-selected="false">Monday, 10th July</button>
+
+                        </div>
             
                     </div>
 
@@ -140,9 +176,11 @@
                                     <i class="fal fa-calendar-circle-exclamation mb-1"></i>
                                     <h3>No sessions booked</h3>
                                     <p>It looks like you have no sessions booked for Friday, 7th July.</p>
-                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
-                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
-                                    </a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                            <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                        </a>
+                                    </div>
         
                                 </div>
         
@@ -159,9 +197,11 @@
                                     <i class="fal fa-calendar-circle-exclamation mb-1"></i>
                                     <h3>No sessions booked</h3>
                                     <p>It looks like you have no sessions booked for Saturday, 8th July.</p>
-                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
-                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
-                                    </a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                            <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                        </a>
+                                    </div>
         
                                 </div>
         
@@ -388,9 +428,11 @@
                                     <i class="fal fa-calendar-circle-exclamation mb-1"></i>
                                     <h3>No sessions booked</h3>
                                     <p>It looks like you have no sessions booked for Monday, 10th July.</p>
-                                    <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
-                                        <i class="far fa-calendar-circle-plus"></i>View and book sessions
-                                    </a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="book-sessions.html" role="button" type="button" class="btn-icon-left btn btn-lg btn-primary mt-4">
+                                            <i class="far fa-calendar-circle-plus"></i>View and book sessions
+                                        </a>
+                                    </div>
         
                                 </div>
         
