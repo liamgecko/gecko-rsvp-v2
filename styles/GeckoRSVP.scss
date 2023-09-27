@@ -257,6 +257,11 @@ body {
             }
         }
         .itinerary-item {
+            .booking-card {
+                &:hover {
+                    border-color: $grey-500 !important;
+                }
+            }
             .card {
                 flex: 1 0 0%;
             }
@@ -265,11 +270,23 @@ body {
             }
             .event-title {
                 font-size: 1rem;
+                line-height: 1.4;
                 color: $primary
             }
             .event-meta {
                 i {
                     color: $primary;
+                }
+            }
+            &.clashing-time {
+                .clashing-time-alert {
+                    border-radius: 7px 7px 0 0;
+                }
+                .booking-card {
+                    border-color: $orange-300 !important;
+                    &:hover {
+                        border-color: $orange-400 !important;
+                    }
                 }
             }
         }
