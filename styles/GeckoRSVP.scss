@@ -19,7 +19,8 @@ body {
 .app-wrapper {
     background-color: $grey-900;
 
-    .app-header {
+    .app-header,
+    .app-footer {
         display: none;
     }
 
